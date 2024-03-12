@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Users </title>
+</head>
+<body>
+    <span th:text="${attribute}"/>
+    <span th:text="${newAttr}"/>
+    <span th:text="${1}"/>
+    <span th:text="${name}"/>
+<br/>
+<br/>
+<div>
+    <table>
+        <tbody>
+        <tr th:each="attr : ${strings}">
+            <td> <span th:text="${attr}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
