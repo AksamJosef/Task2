@@ -40,7 +40,7 @@ public class Department {
     @Enumerated(EnumType.STRING)
     private DepartmentKind name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Company company;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)

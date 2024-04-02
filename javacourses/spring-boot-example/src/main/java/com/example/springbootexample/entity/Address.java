@@ -1,13 +1,10 @@
 package com.example.springbootexample.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,19 +18,22 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "companies")
-public class Company {
+@Table(name = "addresses")
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    /**
-     * Наименование организации
-     */
-    @Column(name = "name")
-    private String name;
+    @Column(name = "postal_code")
+    private Integer postalCode;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Address address;
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "address")
+    private String address;
 }

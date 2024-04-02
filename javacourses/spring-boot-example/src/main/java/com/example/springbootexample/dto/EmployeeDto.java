@@ -23,6 +23,8 @@ public class EmployeeDto {
 
     private Integer salary;
 
+    private String position;
+
     private Citizenship citizenship;
 
     private LocalDate employmentDate;

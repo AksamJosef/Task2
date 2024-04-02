@@ -1,5 +1,6 @@
 package com.example.springbootexample.dto;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +20,12 @@ public class CompanyDto {
      * Наименование организации
      */
     private String name;
+
+    private Integer postalCode;
+
+    private String country;
+
+    private String city;
+
+    private String address;
 }

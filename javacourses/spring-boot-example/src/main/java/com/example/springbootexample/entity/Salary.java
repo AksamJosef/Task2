@@ -1,13 +1,15 @@
 package com.example.springbootexample.entity;
 
-import jakarta.persistence.CascadeType;
+import com.example.springbootexample.enums.Month;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,19 +23,23 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "companies")
-public class Company {
+@Table(name = "salary")
+public class Salary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    /**
-     * Наименование организации
-     */
-    @Column(name = "name")
-    private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Employee employee;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Address address;
+//    @Column(name = "year")
+//    private Integer year;
+
+    @Column(name = "month")
+    @Enumerated(EnumType.STRING)
+    private Month month;
+
+    @Column(name = "value")
+    private Integer value;
 }

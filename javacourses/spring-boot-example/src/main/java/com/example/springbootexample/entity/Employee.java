@@ -10,14 +10,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -37,6 +38,12 @@ public class Employee {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "position")
+    private String position;
 
     @Column(name = "salary")
     private Integer salary;
