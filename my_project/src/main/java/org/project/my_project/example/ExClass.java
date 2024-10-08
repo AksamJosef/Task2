@@ -1,4 +1,2 @@
-package org.project.my_project.example;
-
-public class ExClass {
+package org.project.my_project.example;public class ExClass {
 }

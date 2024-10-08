@@ -1,4 +1,4 @@
-package org.example.streams.function;
+package org.example.streams;
 
 @FunctionalInterface
 public interface Mapper<T, R> {
