@@ -1,4 +1,4 @@
-package gaskar;
+package org.gaskar;
 
 import java.util.Arrays;
 

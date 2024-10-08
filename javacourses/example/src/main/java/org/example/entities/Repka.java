@@ -1,4 +1,4 @@
-package org.example;
+package org.example.entities;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
@@ -10,6 +10,11 @@ public class Repka {
     @PostConstruct
     private void init() {
         System.out.println("Репка создана");
+    }
+
+
+    public void print() {
+        System.out.println("ВЫТЯНУЛИ РЕПКУ");
     }
 
     @PreDestroy
